@@ -1,5 +1,5 @@
-import empleado
-import departamento
+import clases.empleado as empleado
+import clases.departamento as departamento
 
 class Asignacion():
     def __init__(self, id_asignacion, id_departamento, id_empleado):
