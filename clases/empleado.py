@@ -1,8 +1,8 @@
-import tipo_empleado
-import roles
+from clases.tipo_empleado import Tipo_empleado as tipo_empleado
+from clases.roles import Roles as roles
 
 
-class Empleado():
+class Empleado(tipo_empleado, roles):
     def __init__(self, id_empleado, nom_empleado, correo, telefono, direccion, rut, fecha_nacimiento, fecha_contrato, salario, id_tipo_empleado, id_roles, password):
         self.id_empleado = id_empleado
         self.nom_empleado = nom_empleado
