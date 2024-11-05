@@ -1,16 +1,24 @@
-from DAL.db import db
+import mysql.connector
+
+# Connect to server
+cnx = mysql.connector.connect(
+    host="localhost",
+    port=3306,
+    user="root",
+    password="")
+
+# Get a cursor
+cur = cnx.cursor()
+
+# Execute a query
+cur.execute("SELECT CURDATE()")
+
+# Fetch one result
+row = cur.fetchone()
+print("Current date is: {0}".format(row[0]))
+
+# Close connection
+cnx.close()
 
 
-
-
-print("""
-    Seleccione su opción
-    1.
-    2.
-    3.
-    4.
-    5.
-    
-    """)
-# if accion == '1':
-    
+#clases, modulo empleado, conección a base de datos, informacion de base de datos
