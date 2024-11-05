@@ -8,4 +8,16 @@ class Registro_tiempo():
         self.horas_extras = horas_extras
         self.observacion = observacion
 
-    #def validacion_cant_hrs():
+    def validacion_cant_hrs(cant_hrs):
+        max_horas_normales = 45
+        if cant_hrs <= max_horas_normales:
+            return {
+            'horas_normales': cant_hrs,
+            'horas_extras': 0
+        }
+        else:
+            horas_extras = cant_hrs - max_horas_normales
+            return {
+            'horas_normales': max_horas_normales,
+            'horas_extras': horas_extras
+        }
