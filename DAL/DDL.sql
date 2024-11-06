@@ -1,18 +1,21 @@
-
+# Esta clase define en que departamento se asignara a un empleado.
+  
 CREATE TABLE `asignacion` (
   `ID_ASIGNACION` int(11) NOT NULL,
   `ID_DEPARTAMENTO` int(11) NOT NULL,
   `ID_EMPLEADO` int(11) NOT NULL
 
 
-
+# La clase departamento nos comenta sobre el nombre de cada departamento junto con una ID propia.
+  
 CREATE TABLE `departamento` (
   `ID_DEPARTAMENTO` int(11) NOT NULL,
   `NOM_DEPARTAMENTO` varchar(20) NOT NULL,
   `ID_EMPLEADO` int(11) NOT NULL
 
 
-
+# Aqui se almacena toda la informacion que tendra un empleado.
+  
 CREATE TABLE `empleado` (
   `ID_EMPLEADO` int(11) NOT NULL,
   `NOM_EMPLEADO` varchar(100) NOT NULL,
@@ -28,6 +31,7 @@ CREATE TABLE `empleado` (
   `PASSWORD_EMP` varchar(20) NOT NULL
 
 
+# Esta tabla realizara informes que pueden ser sobre el proyecto, un empleado o bien un informe generico del proyecto.  
 
 CREATE TABLE `informe` (
   `ID_INFORME` int(11) NOT NULL,
@@ -36,12 +40,14 @@ CREATE TABLE `informe` (
   `REPORTE` varchar(800) NOT NULL
 
 
-
+# Tabla que une todos los modulos.
+  
 CREATE TABLE `modulos` (
   `ID_MODULOS` int(11) NOT NULL,
   `NOM_MODULOS` varchar(30) NOT NULL
 
 
+# Esta Clase nos entrega la informacion de los proyectos que tiene la empresa.
 
 CREATE TABLE `proyecto` (
   `ID_PROYECTO` int(11) NOT NULL,
@@ -51,6 +57,7 @@ CREATE TABLE `proyecto` (
   `FECHA_FIN` varchar(12) NOT NULL
 
 
+# Esta tabla va unida con los proyectos que realizara un empleado.
 
 CREATE TABLE `proyecto_empleado` (
   `ID_PRO_EMPLEADO` int(11) NOT NULL,
@@ -58,6 +65,7 @@ CREATE TABLE `proyecto_empleado` (
   `ID_PROYECTO` int(11) NOT NULL
 
 
+# Nos registra e indica el tiempo que tienen los empleados como horas de trabajo.
 
 CREATE TABLE `registro_tiempo` (
   `ID_REGISTRO` int(11) NOT NULL,
@@ -69,13 +77,15 @@ CREATE TABLE `registro_tiempo` (
   `OBSERVACION` varchar(500) NOT NULL
 
 
-
+# Los Empleados tienen Roles 
+  
 CREATE TABLE `roles` (
   `ID_ROLES` int(11) NOT NULL,
   `ROL` varchar(30) NOT NULL,
   `PERMS_TXT` varchar(200) NOT NULL
 
 
+# Esta tabla nos muestra el tipo de empleado que hay dentro de este proyecto.
 
 CREATE TABLE `tipo_empleado` (
   `ID_TIPO_EMPLEADO` int(11) NOT NULL,
@@ -84,7 +94,8 @@ CREATE TABLE `tipo_empleado` (
 
 
 
-
+  
+  
 ALTER TABLE `asignacion`
   ADD PRIMARY KEY (`ID_ASIGNACION`),
   ADD KEY `ID_DEPARTAMENTO` (`ID_DEPARTAMENTO`,`ID_EMPLEADO`);
