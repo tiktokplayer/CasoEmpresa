@@ -1,4 +1,4 @@
-from mysql import connector
+from mysql.connector import connect
 import submenu as sm
 
 
