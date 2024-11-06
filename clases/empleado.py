@@ -3,7 +3,7 @@ from clases.roles import Roles as roles
 
 
 class Empleado(tipo_empleado, roles):
-    def __init__(self, id_empleado, nom_empleado, correo, telefono, direccion, rut, fecha_nacimiento, fecha_contrato, salario, id_tipo_empleado, id_roles, password):
+    def __init__(self, id_empleado, nom_empleado, correo, telefono, direccion, rut, fecha_nacimiento, fecha_contrato, salario, id_tipo_empleado, id_roles, password_emp):
         self.id_empleado = id_empleado
         self.nom_empleado = nom_empleado
         self.correo = correo
@@ -15,7 +15,7 @@ class Empleado(tipo_empleado, roles):
         self.salario = salario
         super().__init__(id_tipo_empleado)
         super().__init__(id_roles)
-        self.password = password
+        self.password = password_emp
 
     
     #def Validar_datos():

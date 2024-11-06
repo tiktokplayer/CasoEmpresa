@@ -25,7 +25,7 @@ CREATE TABLE `empleado` (
   `SALARIO` int(11) NOT NULL,
   `ID_TIPO_EMPLEADO` int(11) NOT NULL,
   `ID_ROLES` int(11) NOT NULL,
-  `PASSWORD` varchar(20) NOT NULL
+  `PASSWORD_EMP` varchar(20) NOT NULL
 
 
 
