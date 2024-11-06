@@ -1,5 +1,10 @@
 from mysql.connector import connect
 import submenu as sm
+from clases.empleado import Empleado
+from clases.departamento import Departamento
+from clases.informe import Informe
+from clases.roles import Roles
+from clases.tipo_empleado import Tipoempleado
 
 
 #clases, modulo empleado, conección a base de datos, informacion de base de datos
@@ -20,17 +25,30 @@ def menu(cnx):
             print("Opcion no valida")
 
 def main():
-    cnx = connect(
-        host="localhost",
-        port=3306,
-        user="root",
-        password="")
-    
-    cur = cnx.cursor()
+    try:
+        # Conectar a la base de datos
+        cnx = connect(
+            host="localhost",
+            port=3306,
+            user="root",
+            password="",
+            database="caso_empresa"
+        )
+        
+        if cnx.is_connected():
+            print("Conexión exitosa a la base de datos")
+            print("Bienvenido al Sistema")
+            menu(cnx)
+        else:
+            print("No se pudo conectar a la base de datos")
+            return
 
-    cur.execute("SELECT CURDATE()")
+    except Exception as e:
+        print(f"Error de conexión: {e}")
+    finally:
+        if 'cnx' in locals() and cnx.is_connected():
+            cnx.close()
+            print("\nConexión cerrada")
 
-    row = cur.fetchone()
-    print("Current date is: {0}".format(row[0]))
-
-    cnx.close()
+if __name__ == "__main__":
+    main()
