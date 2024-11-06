@@ -35,18 +35,26 @@ def ver_empleados(cnx):
     cursor.close()
 
 def borrar_empleado(cnx):
-    id_empleado = int(input("Ingrese el ID del empleado a borrar: "))
-    cursor = cnx.cursor()
-    
-    cursor.execute("DELETE FROM proyecto_empleado WHERE ID_EMPLEADO = %s", (id_empleado,))
-    cursor.execute("DELETE FROM asignacion WHERE ID_EMPLEADO = %s", (id_empleado,))
-    cursor.execute("DELETE FROM informe WHERE ID_EMPLEADO = %s", (id_empleado,))
-    
-    cursor.execute("DELETE FROM empleado WHERE ID_EMPLEADO = %s", (id_empleado,))
-    
-    cnx.commit()
-    print("Empleado y registros relacionados borrados exitosamente")
-    cursor.close()
+    try:
+        id_empleado = int(input("Ingrese el ID del empleado a borrar: "))
+        cursor = cnx.cursor()
+        
+        # Verify if employee exists
+        cursor.execute("SELECT ID_EMPLEADO FROM empleado WHERE ID_EMPLEADO = %s", (id_empleado,))
+        if not cursor.fetchone():
+            print("El empleado no existe")
+            return
+            
+        cursor.execute("DELETE FROM empleado WHERE ID_EMPLEADO = %s", (id_empleado,))
+        cnx.commit()
+        print("Empleado borrado exitosamente")
+    except ValueError:
+        print("El ID debe ser un número")
+    except Exception as e:
+        print(f"Error al borrar empleado: {e}")
+    finally:
+        if 'cursor' in locals():
+            cursor.close()
 
 def actualizar_empleado(cnx):
     id_empleado = int(input("Ingrese el ID del empleado a actualizar: "))
