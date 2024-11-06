@@ -34,6 +34,3 @@ def main():
     print("Current date is: {0}".format(row[0]))
 
     cnx.close()
-
-if __name__ == "__main__":
-    main()
