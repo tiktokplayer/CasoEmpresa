@@ -20,7 +20,7 @@ def menu(cnx):
             print("Opcion no valida")
 
 def main():
-    cnx = mysql.connector.connect(
+    cnx = connect(
         host="localhost",
         port=3306,
         user="root",
