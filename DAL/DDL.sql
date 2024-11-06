@@ -19,7 +19,7 @@ CREATE TABLE `empleado` (
   `CORREO` varchar(50) NOT NULL,
   `TELEFONO` int(11) NOT NULL,
   `DIRECCION` varchar(100) NOT NULL,
-  `RUT` int(11) NOT NULL,
+  `RUT` varchar(20) NOT NULL,
   `FECHA_NACIMIENTO` varchar(12) NOT NULL,
   `FECHA_CONTRATO` varchar(12) NOT NULL,
   `SALARIO` int(11) NOT NULL,
