@@ -20,8 +20,8 @@ CREATE TABLE `empleado` (
   `TELEFONO` int(11) NOT NULL,
   `DIRECCION` varchar(100) NOT NULL,
   `RUT` int(11) NOT NULL,
-  `FECHA_NACIMIENTO` date NOT NULL,
-  `FECHA_CONTRATO` date NOT NULL,
+  `FECHA_NACIMIENTO` varchar(12) NOT NULL,
+  `FECHA_CONTRATO` varchar(12) NOT NULL,
   `SALARIO` int(11) NOT NULL,
   `ID_TIPO_EMPLEADO` int(11) NOT NULL,
   `ID_ROLES` int(11) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `empleado` (
 CREATE TABLE `informe` (
   `ID_INFORME` int(11) NOT NULL,
   `ID_EMPLEADO` int(11) NOT NULL,
-  `FECHA_HORA` date NOT NULL,
+  `FECHA_HORA` varchar(25) NOT NULL,
   `REPORTE` varchar(800) NOT NULL
 
 
@@ -47,8 +47,8 @@ CREATE TABLE `proyecto` (
   `ID_PROYECTO` int(11) NOT NULL,
   `NOM_PROYECTO` varchar(50) NOT NULL,
   `DES_PROYECTO` varchar(100) NOT NULL,
-  `FECHA_INICIO` date NOT NULL,
-  `FECHA_FIN` date NOT NULL
+  `FECHA_INICIO` varchar(12) NOT NULL,
+  `FECHA_FIN` varchar(12) NOT NULL
 
 
 
@@ -62,7 +62,7 @@ CREATE TABLE `proyecto_empleado` (
 CREATE TABLE `registro_tiempo` (
   `ID_REGISTRO` int(11) NOT NULL,
   `ID_PRO_EMPLEADO` int(11) NOT NULL,
-  `FECHA` date NOT NULL,
+  `FECHA` varchar(12) NOT NULL,
   `CANTIDAD_HORAS` int(11) NOT NULL,
   `DES_REG_TIEMPO` varchar(200) NOT NULL,
   `HORAS_EXTRAS` tinyint(1) NOT NULL,
