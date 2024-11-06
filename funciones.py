@@ -7,7 +7,7 @@ def agregar_empleado(cnx):
     correo = input("Ingrese el correo del empleado: ")
     telefono = int(input("Ingrese el telefono del empleado: "))
     direccion = input("Ingrese la direccion del empleado: ")
-    rut = int(input("Ingrese el RUT del empleado: "))
+    rut = input("Ingrese el RUT del empleado: ")
     fecha_nacimiento = input("Ingrese la fecha de nacimiento (YYYY-MM-DD): ")
     fecha_contrato = input("Ingrese la fecha de contrato (YYYY-MM-DD): ")
     salario = int(input("Ingrese el salario del empleado: "))
