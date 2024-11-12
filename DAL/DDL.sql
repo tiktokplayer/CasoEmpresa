@@ -1,9 +1,9 @@
 # Esta clase define en que departamento se asignara a un empleado.
   
 CREATE TABLE `asignacion` (
-  `ID_ASIGNACION` int(11) NOT NULL,
-  `ID_DEPARTAMENTO` int(11) NOT NULL,
-  `ID_EMPLEADO` int(11) NOT NULL
+  `ID_ASIGNACION` int(11) NOT NULL,AUTO_INCREMENT
+  `ID_DEPARTAMENTO` int(11) NOT NULL,AUTO_INCREMENT
+  `ID_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
 
 
 # La clase departamento nos comenta sobre el nombre de cada departamento junto con una ID propia.
@@ -11,13 +11,13 @@ CREATE TABLE `asignacion` (
 CREATE TABLE `departamento` (
   `ID_DEPARTAMENTO` int(11) NOT NULL,
   `NOM_DEPARTAMENTO` varchar(20) NOT NULL,
-  `ID_EMPLEADO` int(11) NOT NULL
+  `ID_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
 
 
 # Aqui se almacena toda la informacion que tendra un empleado.
   
 CREATE TABLE `empleado` (
-  `ID_EMPLEADO` int(11) NOT NULL,
+  `ID_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
   `NOM_EMPLEADO` varchar(100) NOT NULL,
   `CORREO` varchar(50) NOT NULL,
   `TELEFONO` int(11) NOT NULL,
@@ -26,16 +26,16 @@ CREATE TABLE `empleado` (
   `FECHA_NACIMIENTO` varchar(12) NOT NULL,
   `FECHA_CONTRATO` varchar(12) NOT NULL,
   `SALARIO` int(11) NOT NULL,
-  `ID_TIPO_EMPLEADO` int(11) NOT NULL,
-  `ID_ROLES` int(11) NOT NULL,
+  `ID_TIPO_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
+  `ID_ROLES` int(11) NOT NULL, AUTO_INCREMENT
   `PASSWORD_EMP` varchar(20) NOT NULL
 
 
 # Esta tabla realizara informes que pueden ser sobre el proyecto, un empleado o bien un informe generico del proyecto.  
 
 CREATE TABLE `informe` (
-  `ID_INFORME` int(11) NOT NULL,
-  `ID_EMPLEADO` int(11) NOT NULL,
+  `ID_INFORME` int(11) NOT NULL, AUTO_INCREMENT
+  `ID_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
   `FECHA_HORA` varchar(25) NOT NULL,
   `REPORTE` varchar(800) NOT NULL
 
@@ -43,14 +43,14 @@ CREATE TABLE `informe` (
 # Tabla que une todos los modulos.
   
 CREATE TABLE `modulos` (
-  `ID_MODULOS` int(11) NOT NULL,
+  `ID_MODULOS` int(11) NOT NULL, AUTO_INCREMENT
   `NOM_MODULOS` varchar(30) NOT NULL
 
 
 # Esta Clase nos entrega la informacion de los proyectos que tiene la empresa.
 
 CREATE TABLE `proyecto` (
-  `ID_PROYECTO` int(11) NOT NULL,
+  `ID_PROYECTO` int(11) NOT NULL, AUTO_INCREMENT
   `NOM_PROYECTO` varchar(50) NOT NULL,
   `DES_PROYECTO` varchar(100) NOT NULL,
   `FECHA_INICIO` varchar(12) NOT NULL,
@@ -60,16 +60,16 @@ CREATE TABLE `proyecto` (
 # Esta tabla va unida con los proyectos que realizara un empleado.
 
 CREATE TABLE `proyecto_empleado` (
-  `ID_PRO_EMPLEADO` int(11) NOT NULL,
-  `ID_EMPLEADO` int(11) NOT NULL,
-  `ID_PROYECTO` int(11) NOT NULL
+  `ID_PRO_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
+  `ID_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
+  `ID_PROYECTO` int(11) NOT NULL AUTO_INCREMENT
 
 
 # Nos registra e indica el tiempo que tienen los empleados como horas de trabajo.
 
 CREATE TABLE `registro_tiempo` (
-  `ID_REGISTRO` int(11) NOT NULL,
-  `ID_PRO_EMPLEADO` int(11) NOT NULL,
+  `ID_REGISTRO` int(11) NOT NULL, AUTO_INCREMENT
+  `ID_PRO_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
   `FECHA` varchar(12) NOT NULL,
   `CANTIDAD_HORAS` int(11) NOT NULL,
   `DES_REG_TIEMPO` varchar(200) NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE `registro_tiempo` (
 # Los Empleados tienen Roles 
   
 CREATE TABLE `roles` (
-  `ID_ROLES` int(11) NOT NULL,
+  `ID_ROLES` int(11) NOT NULL, AUTO_INCREMENT
   `ROL` varchar(30) NOT NULL,
   `PERMS_TXT` varchar(200) NOT NULL
 
@@ -88,7 +88,7 @@ CREATE TABLE `roles` (
 # Esta tabla nos muestra el tipo de empleado que hay dentro de este proyecto.
 
 CREATE TABLE `tipo_empleado` (
-  `ID_TIPO_EMPLEADO` int(11) NOT NULL,
+  `ID_TIPO_EMPLEADO` int(11) NOT NULL, AUTO_INCREMENT
   `IDENTIFICACION` int(11) NOT NULL
 
 
