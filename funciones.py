@@ -11,8 +11,8 @@ def agregar_empleado(cnx):
     fecha_nacimiento = input("Ingrese la fecha de nacimiento (YYYY-MM-DD): ")
     fecha_contrato = input("Ingrese la fecha de contrato (YYYY-MM-DD): ")
     salario = int(input("Ingrese el salario del empleado: "))
-    id_tipo_empleado = int(input("Ingrese el ID del tipo de empleado: "))
-    id_roles = int(input("Ingrese el ID del rol: "))
+    id_tipo_empleado = int(input("Ingrese el ID del tipo de empleado, 1 = Gerente, 2 = Desarrollador, 3 = Tester, 4 = Administrador, 5 = Empleado: "))
+    id_roles = int(input("Ingrese el ID del rol, 1 = Gerente, 2 = Desarrollador, 3 = Tester, 4 = Administrador, 5 = Empleado: "))
     password_emp = input("Ingrese la contraseña del empleado: ")
     
     cursor = cnx.cursor()
