@@ -5,9 +5,10 @@ from clases.departamento import Departamento
 from clases.informe import Informe
 from clases.roles import Roles
 from clases.tipo_empleado import Tipoempleado
+from servicios.consultar_apis import consultar_api as api
+import requests as req
 
-
-#clases, modulo empleado, conección a base de datos, informacion de base de datos
+# clases, modulo empleado, conección a base de datos, informacion de base de datos
 
 def menu(cnx):
     while True:
@@ -52,3 +53,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# def api():
+#     try:
+#         rut = input("Ingrese el RUT: ")
+#         response = req.get(f"https://api.boostr.cl/rut/name/{rut}.json")
+#         print(response.text)
+#     except Exception as e:
+#         print(f"Error al consultar la API: {e}")
+
+
+# if __name__ == "__main__":
+#     api()
